@@ -1,0 +1,62 @@
+> db;
+test
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mahesh  0.000GB
+mydb    0.000GB
+test    0.000GB
+
+> show collections
+employee
+
+> use mahesh
+switched to db mahesh
+
+> show collections
+employee
+
+> db.createCollection("student");
+{ "ok" : 1 }
+
+> show collections
+employee
+student
+db.student.insert({name:"mahesh"},{city:"silvassa"})
+WriteResult({ "nInserted" : 1 })
+
+
+> db.student.insert({name:"rakesh"},{city:"silvassa"})
+WriteResult({ "nInserted" : 1 })
+
+> db.student.insert({name:"hemant"},{city:"nashik"})
+WriteResult({ "nInserted" : 1 })
+
+> db.student.find()
+{ "_id" : ObjectId("6194bf762454b10c5a2da57f"), "name" : "mahesh" }
+{ "_id" : ObjectId("6194bf8e2454b10c5a2da580"), "name" : "rakesh" }
+{ "_id" : ObjectId("6194bf9a2454b10c5a2da581"), "name" : "hemant" }
+ 
+> db.student.update({name:"hemant"},{$set:{name:"shyam"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.student.find()
+{ "_id" : ObjectId("6194bf762454b10c5a2da57f"), "name" : "mahesh" }
+{ "_id" : ObjectId("6194bf8e2454b10c5a2da580"), "name" : "rakesh" }
+{ "_id" : ObjectId("6194bf9a2454b10c5a2da581"), "name" : "shyam" }
+
+> db.student.remove({name:"rakesh"})
+WriteResult({ "nRemoved" : 1 })
+
+> db.student.find()
+{ "_id" : ObjectId("6194bf762454b10c5a2da57f"), "name" : "mahesh" }
+{ "_id" : ObjectId("6194bf9a2454b10c5a2da581"), "name" : "shyam" }
+
+> db.student.find({name:"shyam"},{city:1})
+{ "_id" : ObjectId("6194bf9a2454b10c5a2da581") }
+
+> db.student.count()
+2
+

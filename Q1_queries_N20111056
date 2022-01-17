@@ -1,0 +1,51 @@
+mahesh@mahesh-Gateway-NE46Rs:~$ cd Desktop/
+mahesh@mahesh-Gateway-NE46Rs:~/Desktop$ mongoimport --jsonArray --db mahesh --collection employee --file /home/mahesh/Desktop/1_emp_N20111056.json
+2021-11-17T15:18:01.921+0530	connected to: localhost
+2021-11-17T15:18:01.973+0530	imported 500 documents
+mahesh@mahesh-Gateway-NE46Rs:~/Desktop$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("68a00a90-0a33-4c0f-99c1-6a4c0f26871b") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-11-17T14:26:56.170+0530 I STORAGE  [initandlisten] 
+2021-11-17T14:26:56.170+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-11-17T14:26:56.170+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-11-17T14:27:03.883+0530 I CONTROL  [initandlisten] 
+2021-11-17T14:27:03.883+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-11-17T14:27:03.883+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-11-17T14:27:03.883+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mahesh  0.000GB
+mydb    0.000GB
+test    0.000GB
+> use mahesh
+switched to db mahesh
+> show collections
+employee
+student
+> db.employee.find()
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e4"), "RollNo" : 2686, "Studname" : "Axel Wilkerson", "Studaddress" : "374-2213 Tempor Rd." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e5"), "RollNo" : 1224, "Studname" : "Thaddeus Hanson", "Studaddress" : "Ap #444-5000 Mattis Avenue" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e6"), "RollNo" : 4373, "Studname" : "Austin Snyder", "Studaddress" : "P.O. Box 314, 7610 Interdum Rd." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e7"), "RollNo" : 2475, "Studname" : "Lacy Greer", "Studaddress" : "Ap #203-295 Risus Road" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e8"), "RollNo" : 336, "Studname" : "Ivy Lyons", "Studaddress" : "Ap #777-3917 Eget Av." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8e9"), "RollNo" : 4754, "Studname" : "Sonia Ball", "Studaddress" : "Ap #595-3746 Aliquet. St." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8ea"), "RollNo" : 979, "Studname" : "Stephanie Klein", "Studaddress" : "Ap #148-3513 Semper Avenue" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8eb"), "RollNo" : 4892, "Studname" : "Miranda Watson", "Studaddress" : "155-4728 Tristique Rd." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8ec"), "RollNo" : 4283, "Studname" : "Mariam Ashley", "Studaddress" : "Ap #242-869 Magna. St." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8ed"), "RollNo" : 4232, "Studname" : "Kareem Bennett", "Studaddress" : "Ap #991-7935 Vitae, Ave" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8ee"), "RollNo" : 2129, "Studname" : "Ramona Fox", "Studaddress" : "221 Porttitor Road" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8ef"), "RollNo" : 4619, "Studname" : "Neil Neal", "Studaddress" : "Ap #153-5210 Adipiscing, St." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f0"), "RollNo" : 3732, "Studname" : "Phillip Giles", "Studaddress" : "430-4557 Semper. Road" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f1"), "RollNo" : 3191, "Studname" : "Darius Boone", "Studaddress" : "4114 Felis St." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f2"), "RollNo" : 2570, "Studname" : "Kelsie Hansen", "Studaddress" : "853-4090 In, Road" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f3"), "RollNo" : 4233, "Studname" : "Bevis Roberts", "Studaddress" : "733-1802 Pellentesque Ave" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f4"), "RollNo" : 2816, "Studname" : "Bertha Collins", "Studaddress" : "Ap #705-3503 Aliquam Av." }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f5"), "RollNo" : 3281, "Studname" : "Xaviera Bender", "Studaddress" : "P.O. Box 133, 4828 Suspendisse Avenue" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f6"), "RollNo" : 589, "Studname" : "September Mcfarland", "Studaddress" : "9299 Augue, Ave" }
+{ "_id" : ObjectId("6194bc604a6fd1e128a4c8f7"), "RollNo" : 2128, "Studname" : "Dillon Leach", "Studaddress" : "936-5509 Nunc, Rd." }
+Type "it" for more
